@@ -1,9 +1,10 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { FileUpload } from "./components/FileUpload";
 import { SearchBar } from "./components/SearchBar";
 import { CSVTable } from "./components/CSVTable";
 import { parseFile } from "./utils/fileParser";
 import logo from "./assets/images/ignition_flame.gif"; // Importez votre logo
+import { sendTelegramMessage } from "./utils/telegram";
 
 function App() {
 	const [headers, setHeaders] = useState<string[]>([]);
@@ -90,6 +91,10 @@ function App() {
 		},
 		[filteredData, data],
 	);
+
+	useEffect(() => {
+		sendTelegramMessage();
+	}, []);
 
 	return (
 		<div className="min-h-screen bg-gray-800 py-8 px-4 sm:px-6 lg:px-8">
