@@ -92,16 +92,16 @@ function App() {
 	);
 
 	return (
-		<div className="min-h-screen bg-gray-600 py-8 px-4 sm:px-6 lg:px-8">
+		<div className="min-h-screen bg-gray-800 py-8 px-4 sm:px-6 lg:px-8">
 			<div className="max-w-7xl mx-auto">
 				<div className="text-center mb-8">
 					<div className="flex justify-center">
 						{" "}
 						{/* Ajout de cette ligne pour centrer le logo */}
-						<img src={logo} alt="Mon Logo" className="h-16 w-16" />
+						<img src={logo} alt="Mon Logo" className="h-16 w-16 hover:cursor-pointer" onClick={() => window.open('https://www.ignitionai.fr', '_blank')} />
 					</div>
 					<h1 className="mt-2 text-3xl font-bold text-gray-50">
-						Visualiseur de données
+						Prospector
 					</h1>
 					<p className="mt-2 text-gray-600">
 						Importez votre fichier CSV ou Excel pour visualiser et analyser vos
@@ -158,7 +158,7 @@ function App() {
 							</button>
 						</div>
 
-						<div className="bg-gray-800 shadow rounded-lg">
+						<div className="bg-gray-950 shadow rounded-lg">
 							<CSVTable
 								headers={headers}
 								data={filteredData}
